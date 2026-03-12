@@ -62,9 +62,10 @@
             const historyItem = document.createElement('div');
             historyItem.className = 'history-item';
             
-            let ballsHtml = lottoArray.forEach(num =>
+            let ballsHtml ="";
+            lottoArray.forEach(num =>
 	            ballsHtml+=`<div class="small-ball ${getBallColor(num)}">${num}</div>`
-            ) //로또 번호 배열 스몰 볼 div 내용 만들기
+            ); //로또 번호 배열 스몰 볼 div 내용 만들기
 
             //historyItem은 한줄 레코드 컨테이너, history-count는 레코드 앞 텍스트 div, balls는 스몰볼 
             historyItem.innerHTML = `
