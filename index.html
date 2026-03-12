@@ -11,7 +11,7 @@
         <input onclick="getLotto()" type="button" value="로또 번호 뽑기" />
     </div>
 
-    <div id="currentLotto" class="current-draw">
+    <div id="currentLotto" class="current-draw"><!-- 밑줄 그어주고-->
         <p style="color:#aaa">버튼을 눌러 번호를 생성하세요</p>
     </div>
 
@@ -23,7 +23,7 @@
     </div>
 
     <script>
-        let count = 0;
+        let count = 0; //페이지에서 로또 번호 뽑은 횟수
 
         function getBallColor(num) { // 로또 번호 크기에 따른 배경색
             if (num < 10) return 'bg-1';
@@ -62,11 +62,11 @@
             const historyItem = document.createElement('div');
             historyItem.className = 'history-item';
             
-            let ballsHtml = lottoArray.map(num => 
-                `<div class="small-ball ${getBallColor(num)}">${num}</div>`
-            ).join(''); //볼배열 Array.map으로 스몰 볼 리스트 만들기
+            let ballsHtml = lottoArray.forEach(num =>
+	            ballsHtml+=`<div class="small-ball ${getBallColor(num)}">${num}</div>`
+            ) //볼배열 스몰 볼 div 내용 만들기
 
-            //historyItem은 한줄 섹션 
+            //historyItem은 한줄 레코드 컨테이너, history-count는 레코드 앞 텍스트 div, balls는 스몰볼 
             historyItem.innerHTML = `
                 <div class="history-count">${count}회차</div>
                 <div class="history-balls">${ballsHtml}</div>
