@@ -1,0 +1,83 @@
+body {
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+.header {
+    margin-bottom: 30px;
+}
+input[type="button"] {
+    padding: 15px 30px;
+    font-size: 1.0em;
+    background-color: #4A90E2;
+    color: white;
+    border: none;    
+}
+input[type="button"]:hover {
+    background-color: #357ABD;
+}
+
+.current-draw {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 50px;    
+}
+
+.ball {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;    
+}
+
+
+.history-section {    
+    width: 350px;
+    background: white;
+    padding: 20px;    
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    gap: 15px;
+}
+
+.history-count {
+    font-weight: bold;
+    color: #666;
+    width: 60px;
+}
+
+.history-balls {
+    display: flex;
+    gap: 8px;
+}
+
+.small-ball {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: white;
+}
+
+/* 번호대별 공 색상 */
+.bg-1 { background-color: #fbc400; } /* 1~10 */
+.bg-2 { background-color: #69c8f2; } /* 11~20 */
+.bg-3 { background-color: #ff7272; } /* 21~30 */
+.bg-4 { background-color: #aaa; }    /* 31~40 */
+.bg-5 { background-color: #b0d840; } /* 41~45 */

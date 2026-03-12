@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lotto</title>
+    <script>
+        function getLotto(){
+            document.getElementById('lottoNumber').innerHTML ="0,0,0,0,0,0"
+
+            let lottoArray=[0,0,0,0,0,0];
+            for(let i=0;i<6;i++){
+                // while(1){
+                //     loNum=parseInt(Math.random()*31415197%45)+1;
+                //     let sameNum=0;
+                //     for(let j=0;j<i;j++){
+                //         if(lottoArray[j]==loNum){
+                //             sameNum++
+                //         }                                                  
+                //     }
+                //     if(sameNum!=1){
+                //         lottoArray[i]=loNum;
+                //         break;
+                //     }
+                // }
+                do{
+                   loNum=parseInt(Math.random()*31415197%45)+1;
+                   console.log(`${i+1}번째 번호 ${loNum}`);
+                }while(lottoArray.includes(loNum))
+                lottoArray[i]=loNum;
+            }
+            document.getElementById('lottoNumber').innerHTML =lottoArray.toString();
+
+        }
+        
+    </script>
+</head>
+<body>
+    <h2 id="lottoNumber"></h2>
+    <input onclick="getLotto()" type="button" value="로또번호" />
+    
+</body>
+</html>

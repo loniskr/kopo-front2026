@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 추첨기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <input onclick="getLotto()" type="button" value="로또 번호 뽑기" />
+    </div>
+
+    <div id="currentLotto" class="current-draw">
+        <p style="color:#aaa">버튼을 눌러 번호를 생성하세요</p>
+    </div>
+
+    <div class="history-section">
+        <h3>추첨 기록</h3>
+        <hr>
+        <div id="historyList">
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function getBallColor(num) { // 로또 번호 크기에 따른 배경색
+            if (num < 10) return 'bg-1';
+            if (num < 20) return 'bg-2';
+            if (num < 30) return 'bg-3';
+            if (num < 40) return 'bg-4';
+            return 'bg-5';
+        }
+
+        function getLotto() {
+            count++;
+            let lottoArray = [];
+            
+            for(let i=0; i<6; i++) {
+                let loNum;
+                do {
+                   loNum = Math.floor(Math.random() * 45) + 1;
+                } while(lottoArray.includes(loNum));
+                lottoArray.push(loNum);
+            }//번호 추첨 끝남.
+            
+
+            const currentContainer = document.getElementById('currentLotto');
+            
+            currentContainer.innerHTML = ''; 
+            //원래 쓰여있던 안내문구 지우기.
+
+            lottoArray.forEach(num => { //번호 기반으로 ball div 만들기
+                const ball = document.createElement('div');
+                ball.className = `ball ${getBallColor(num)}`;
+                ball.innerText = num;
+                currentContainer.appendChild(ball);
+            });
+            
+            const historyList = document.getElementById('historyList');
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            
+            let ballsHtml = lottoArray.map(num => 
+                `<div class="small-ball ${getBallColor(num)}">${num}</div>`
+            ).join(''); //볼배열 Array.map으로 스몰 볼 리스트 만들기
+
+            //historyItem은 한줄 섹션 
+            historyItem.innerHTML = `
+                <div class="history-count">${count}회차</div>
+                <div class="history-balls">${ballsHtml}</div>
+            `;                       
+            historyList.prepend(historyItem);
+        }
+    </script>
+</body>
+</html>

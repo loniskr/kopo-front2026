@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js02</title>
+    <script>
+        function splitPhoneNumber(){
+            const pn = document.getElementById("phoneNumber");                      
+            if(pn.value==""){
+                alert("번호를 010-0000-0000 형태로 입력해주세요");
+            }
+            const numberArr = pn.value.split("-");
+            console.table(numberArr);
+        }        
+    </script>
+</head>
+<body>
+    <input type="text" name="phoneNumber" id="phoneNumber" value="" />    
+    <input onclick="splitPhoneNumber()" type="button" value="입력">
+    
+</body>
+</html>
