@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .l-header {
+        background-color: #00213f;
+        color: #fff;
+        padding: 1rem 1.875rem;
+    }
+
+    .l-header__inner {
+        display: flex;
+        align-items: center;         
+        justify-content: space-between; 
+    }
+
+    .l-header__inner__wrap {
+        display: flex;
+        align-items: center;
+        gap: 20px; 
+    }
+
+    .p-topnav__lists {
+        display: flex;
+        list-style: none;
+        gap: 30px; 
+        margin: 0;
+        padding: 0;
+    }
+
+    .l-header__btn {
+        display: flex;
+        gap: 15px;
+    }
+
+    </style>
+</head>
+<body>
+    <header class="l-header">
+    <div class="l-header__inner">
+        
+        <div class="l-header__inner__wrap">
+        <div class="p-gnav__lang">Language</div>
+        <div class="l-header__logo">LOGO</div>
+        </div>
+
+        <nav class="p-topnav">
+        <ul class="p-topnav__lists">
+            <li class="p-topnav__list">건프라</li>
+            <li class="p-topnav__list">30 MINUTES</li>
+            <li class="p-topnav__list">캐릭터</li>
+        </ul>
+        </nav>
+
+        <div class="l-header__btn">
+        <span>Search</span>
+        <span>Menu</span>
+        </div>
+
+    </div>
+    </header>
+
+
+    
+</body>
+</html>

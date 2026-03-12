@@ -7,14 +7,10 @@
     <style>
         .wrap{
             background-color: gainsboro;
-            width: 700px;
-            height: 500px;;
+            width: 500px;
+            height: 500px;
             display: flex;
-            /*gap: 10px;
-            flex-direction: row-reverse;
-            justify-content: flex-start;*/
-            justify-content: center;
-            align-items: center; 
+            justify-content: space-between;
         }
         .wrap>div>div{
             color:white;
@@ -24,18 +20,22 @@
             width: 100px;
             height:100px
         }
-        .wrap>div{
+        .wrap>div{            
             display: flex;
-            justify-content: center;
-            align-items: center ;
+            justify-content: space-between; 
         }
-        .center>div{
-            display: flex;
-            
-        } 
-        .right-side>div{
+        .left-side{
             display:flex;
+            flex-direction: column;
             
+        }
+        .center{
+            display: flex;
+            flex-direction: column;                       
+        } 
+        .right-side{
+            display:flex;
+            flex-direction: column;                       
         }
 
         .blue{
@@ -54,7 +54,18 @@
 <body>
     <div class="wrap">
         <div class="left-side">
-            <div class="blue">A</div>            
+            <div class="blue">A</div>
+            <div class="pink">B</div>
+            <div class="yellow">C</div>
+        </div>
+        <div class="center">
+            <div class="blue">D</div>            
+            <div class="yellow">E</div>
+        </div>
+        <div class="right-side">
+            <div class="blue">F</div>
+            <div class="pink">G</div>
+            <div class="yellow">H</div>
         </div>        
     </div>
     

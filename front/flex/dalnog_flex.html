@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .top-menu {
+        background: #111111;
+        border-bottom: 1px solid #333;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .top-menu-inner {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    .top-menu .logo { flex-shrink: 0; }
+    .top-menu .logo img { width: 151px; height: 40px; display: block; }
+    .menu-btn-wrap {
+        position: relative;
+        margin-left: auto;
+    }
+    .menu-toggle {
+        display: block;
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 8px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .menu-toggle:hover {
+        background: #444;
+    }
+    .menu-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+        min-width: 400px;
+        background: #111111;
+        padding: 12px 16px;
+        border: 1px solid #333;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        z-index: 1000;
+        flex-direction: column;
+        margin-top: 4px;
+    }
+    .menu-links.active { display: flex; }
+    .menu-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2px 8px;
+    }
+    .menu-links a {
+        color: #cccccc;
+        font-family: Arial, sans-serif;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 6px 3px;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+    .menu-links a:hover { color: #ffffff; }
+    .menu-links a.grade-main { font-size: 19px; }
+
+    @media (max-width: 500px) {
+        .menu-links {
+            min-width: 340px;
+            padding: 14px 18px;
+        }
+        .menu-links a { font-size: 17px; }
+        .menu-links a.grade-main { font-size: 19px; }
+    }
+    </style>
+</head>
+<body>
+    <div id="top-menu-container">
+        <!-- Dalong.net Top Menu - 2026 Redesign -->
+    <nav class="top-menu">
+        <div class="container top-menu-inner">
+            <a href="https://dalong.net" target="_self" class="logo">
+                <img src="./images/dalongnet.gif" alt="Dalong.net">
+            </a>
+
+            <div class="menu-btn-wrap">
+                <button class="menu-toggle" onclick="document.getElementById('top-menu-dropdown').classList.toggle('active')">Menu</button>
+                <div class="menu-links" id="top-menu-dropdown">
+                    <div class="menu-row">
+                        <a href="/reviews/mg/mg_cata_new.htm" target="_self" class="grade-main">MG</a>
+                        <a href="/reviews/rg/rg_cata_new.htm" target="_self" class="grade-main">RG</a>
+                        <a href="/reviews/hg/hg_cata_new.htm" target="_self" class="grade-main">HG</a>
+                        <a href="/reviews/pg/pg_cata_new.htm" target="_self" class="grade-main">PG</a>
+                        <a href="/reviews/sd/sd_cata_new.htm" target="_self">SD</a>
+                        <a href="/reviews/sd2/sd2_cata_new.htm" target="_self">SD2</a>
+                        <a href="/reviews/seed/seed_cata_new.htm" target="_self">SEED</a>
+                        <a href="/reviews/00/00_cata_new.htm" target="_self">OO</a>
+                        <a href="/reviews/age/age_cata_new.htm" target="_self">AGE</a>
+                        <a href="/reviews/bf/bf_cata_new.htm" target="_self">Build</a>
+                        <a href="/reviews/ib/ib_cata_new.htm" target="_self">IBO</a>
+                        <a href="/reviews/etc/getc_cata_new.htm" target="_self">ETC/G</a>
+                    </div>
+                    <div class="menu-row">
+                        <a href="/reviews/cg/cg_cata_new.htm" target="_self">Club-G</a>
+                        <a href="/reviews/old/old_cata_new.htm" target="_self">OLD</a>
+                        <a href="/reviews/etc/metc_cata_new.htm" target="_self">ETC/M</a>
+                        <a href="/reviews/etc/fetc_cata_new.htm" target="_self">ETC/F</a>
+                        <a href="/reviews/etc/sw_cata_new.htm" target="_self">SW</a>
+                    </div>
+                    <div class="menu-row">
+                        <a href="/reviews/kotobukiya/mkoto_cata_new.htm" target="_self">Koto/M</a>
+                        <a href="/reviews/kotobukiya/fkoto_cata_new.htm" target="_self">Koto/F</a>
+                        <a href="/reviews/tomy/tomy_cata_new.htm" target="_self">Tomy</a>
+                        <a href="/reviews/sp/sp_cata_new.htm" target="_self">Special</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    </div>
+</body>
