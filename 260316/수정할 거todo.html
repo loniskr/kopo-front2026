@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="TodoContent"  />
+    <input type="button" value="할 일 등록" id="TodoInsert" /> 
+    <input type="button" value="할 일 지우기" id="TodoAction" />
+    <input type="button" value="전부 지우기" id="ClearBtn" />
+
+    <div>
+        <ul id="todoList">
+            
+        </ul>
+    </div>
+    <script>
+        const TodoDel = document.getElementById("TodoAction");
+        const TodoIns = document.getElementById("TodoInsert");
+        const TodoList = document.getElementById("todoList");
+        const ClearAll = document.getElementById("ClearBtn");
+        let TodoIndex;
+        if(localStorage.getItem(TodoIndex)){
+            TodoIndex=localStorage.getItem(TodoIndex);
+        }else{
+            TodoIndex=1;
+        }
+        
+        //리스닝 화면
+
+        TodoIns.addEventListener('click',()=>{
+            if(TodoIndex!=1){
+                localStorage.getItem(TodoIndex);
+            }
+            const content=document.getElementById("TodoContent").value;
+            const liElem=document.createElement('li');
+            liElem.className='TodoContent';
+            liElem.innerHTML=content;
+            TodoList.appendChild(liElem);                    
+            localStorage.setItem(TodoIndex,liElem);  
+            TodoIndex=localStorage.setItem('TodoIndex',TodoIndex+1);
+        });      
+        //insertTodo 의 텍스트를 todoList li에 등록하기.
+
+        //할 일 지우기 리스닝
+        TodoDel.addEventListener('click',()=>{
+            const content=document.getElementById("TodoContent").value;
+            const list = document.getElementById('todoList');
+            const items = list.getElementsByTagName('li');           
+            list.innerHTML='';
+
+
+            // items.array.forEach(item => {
+            //     if (item.textContent.includes(content)) {
+            //         item.remove(); // 요소 삭제
+            //     }                
+            // });
+            // localStorage 삭제 방법 강구
+            
+        })
+
+
+
+
+        //clear()
+        ClearAll.addEventListener('click',()=>{
+            localStorage.clear();
+        })
+
+        /*
+1. 페이지 그릴때 localStorage를 순회하여 리스트 작성
+2. 추가할때  input text 뽑아서 list추가와 localStorage 추가
+3. 제거 input text 값 뽑아서 li 순회하며 삭제 localStorage에서 삭제
+4. clear() local 다 비우기 + li전부 지우기.
+*/
+
+
+
+    </script>
+    
+</body>
+</html>
