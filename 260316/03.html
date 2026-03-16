@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const divElem = document.createElement('div'); // <div></div>
+        const liElem = document.createElement('li'); // <li></li>
+        liElem.className = 'li-class-name'; // class 속성 할당
+        liElem.id = 'li-id'; // id 값 할당
+        liElem.innerHTML = '<strong>삽입되는 요소</strong>'; // li 내부 HTML 노드 할당
+    </script>
+</head>
+<body>
+    <div>
+        <h1>리스트 시작</h1>
+        <ol id="ol-id">
+            <li id="first">1</li>
+            <li id="second">2</li>
+            <li id="third">3</li>
+        </ol>
+    </div>
+    <button onclick="appendLi();" id="button-id"> append</button>
+    <button onclick="insertBe();" id="button-id"> insert</button>
+
+    <script>
+        function appendLi(){
+            const appLi=document.getElementById('first');
+            const liElem=document.createElement('li');
+            liElem.className ='li-class-name';
+            liElem.innerHTML='<strong>삽입되는 요소</strong>';
+            appLi.parentNode.appendChild(liElem);
+        }
+        function insertBe(){
+            const appLi=document.getElementById('second');
+            const liElem=document.createElement('li');
+            liElem.className ='li-class-name';
+            liElem.innerHTML='<strong>삽입되는 요소</strong>';
+            appLi.parentNode.childNodes.insertBefore(liElem);
+        }
+    </script>
+    
+</body>
+</html>
